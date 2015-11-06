@@ -120,7 +120,7 @@ function govi_noticias_views_default_views() {
   $handler->display->display_options['fields']['fieldset_3']['field'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset_3']['label'] = 'Redes Sociales';
   $handler->display->display_options['fields']['fieldset_3']['hide_empty'] = TRUE;
-  /* Field: Broken/missing handler */
+  /* Field: Content: Easy Social */
   $handler->display->display_options['fields']['easy_social']['id'] = 'easy_social';
   $handler->display->display_options['fields']['easy_social']['table'] = 'node';
   $handler->display->display_options['fields']['easy_social']['field'] = 'easy_social';
