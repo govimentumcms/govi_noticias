@@ -17,6 +17,21 @@ function govi_noticias_views_api($module = NULL, $api = NULL) {
 function govi_noticias_image_default_styles() {
   $styles = array();
 
+  // Exported image style: imagen_noticia_destacada.
+  $styles['imagen_noticia_destacada'] = array(
+    'label' => 'Imagen noticia destacada (340x140)',
+    'effects' => array(
+      3 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 310,
+          'height' => 140,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: imagen_principal_noticia.
   $styles['imagen_principal_noticia'] = array(
     'label' => 'Imagen principal noticia',

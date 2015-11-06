@@ -50,23 +50,22 @@ function govi_noticias_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => -4,
+      'weight' => 4,
     ),
   );
 
-  // Exported field_instance: 'node-noticia-field_categoria'.
-  $field_instances['node-noticia-field_categoria'] = array(
+  // Exported field_instance: 'node-noticia-field_archivos_adjuntos'.
+  $field_instances['node-noticia-field_archivos_adjuntos'] = array(
     'bundle' => 'noticia',
-    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
+        'module' => 'file',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 5,
+        'type' => 'file_table',
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -76,17 +75,65 @@ function govi_noticias_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_categoria',
-    'label' => 'Categoría',
-    'required' => 1,
+    'field_name' => 'field_archivos_adjuntos',
+    'label' => 'Archivos adjuntos',
+    'required' => 0,
     'settings' => array(
+      'description_field' => 0,
+      'file_directory' => 'archivos-adjuntos',
+      'file_extensions' => 'pdf doc docx odt odf xls xlsx zip',
+      'max_filesize' => '2 MB',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-noticia-field_copete'.
+  $field_instances['node-noticia-field_copete'] = array(
+    'bundle' => 'noticia',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Utilice este campo para implementar el Lead o Copete del texto. Puede tener más información sobre el uso del copete en escritos periodísticos en el siguiente: http://www.abc.com.py/articulos/el-lead-y-el-cuerpo-de-la-noticia-1055422.html',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_copete',
+    'label' => 'Copete',
+    'required' => 1,
+    'settings' => array(
+      'display_summary' => 0,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
       'weight' => 1,
     ),
   );
@@ -142,48 +189,72 @@ function govi_noticias_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 0,
+      'weight' => 3,
     ),
   );
 
-  // Exported field_instance: 'node-noticia-field_image'.
-  $field_instances['node-noticia-field_image'] = array(
+  // Exported field_instance: 'node-noticia-field_multimedia_noticia'.
+  $field_instances['node-noticia-field_multimedia_noticia'] = array(
     'bundle' => 'noticia',
     'deleted' => 0,
-    'description' => 'Publique la imágen principal de este artículo',
+    'description' => 'Utilice este campo para presentar múltiples imágenes o videos relacionados con la noticia',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
-        'module' => 'image',
+        'label' => 'above',
+        'module' => 'field_slideshow',
         'settings' => array(
-          'image_link' => '',
-          'image_style' => 'large',
+          'slideshow_caption' => '',
+          'slideshow_caption_link' => '',
+          'slideshow_carousel_circular' => 0,
+          'slideshow_carousel_follow' => 0,
+          'slideshow_carousel_image_style' => '',
+          'slideshow_carousel_scroll' => 1,
+          'slideshow_carousel_skin' => '',
+          'slideshow_carousel_speed' => 500,
+          'slideshow_carousel_vertical' => 0,
+          'slideshow_carousel_visible' => 3,
+          'slideshow_colorbox_image_style' => '',
+          'slideshow_colorbox_slideshow' => '',
+          'slideshow_colorbox_slideshow_speed' => 4000,
+          'slideshow_colorbox_speed' => 350,
+          'slideshow_colorbox_transition' => 'elastic',
+          'slideshow_controls' => 0,
+          'slideshow_controls_pause' => 0,
+          'slideshow_controls_position' => 'after',
+          'slideshow_field_collection_image' => '',
+          'slideshow_fx' => 'fade',
+          'slideshow_image_style' => '',
+          'slideshow_link' => '',
+          'slideshow_order' => '',
+          'slideshow_pager' => '',
+          'slideshow_pager_image_style' => '',
+          'slideshow_pager_position' => 'after',
+          'slideshow_pause' => 0,
+          'slideshow_speed' => 1000,
+          'slideshow_start_on_hover' => 0,
+          'slideshow_timeout' => 4000,
         ),
-        'type' => 'image',
-        'weight' => 0,
+        'type' => 'slideshow',
+        'weight' => 7,
       ),
       'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => 'content',
-          'image_style' => 'medium',
-        ),
-        'type' => 'image',
-        'weight' => -1,
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_image',
-    'label' => 'Imagen',
+    'field_name' => 'field_multimedia_noticia',
+    'label' => 'Multimedia',
     'required' => 1,
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 0,
-      'file_directory' => 'field/image',
+      'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '1 MB',
-      'max_resolution' => '300x250',
+      'max_filesize' => '450 KB',
+      'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 1,
       'user_register_form' => FALSE,
@@ -196,7 +267,7 @@ function govi_noticias_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => -1,
+      'weight' => 2,
     ),
   );
 
@@ -236,7 +307,7 @@ function govi_noticias_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => -4,
+      'weight' => 5,
     ),
   );
 
@@ -286,13 +357,15 @@ function govi_noticias_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Archivos adjuntos');
   t('Body');
-  t('Categoría');
+  t('Copete');
   t('Enter a comma-separated list of words to describe your content.');
   t('Fecha de publicación');
-  t('Imagen');
-  t('Publique la imágen principal de este artículo');
+  t('Multimedia');
   t('Tags');
+  t('Utilice este campo para implementar el Lead o Copete del texto. Puede tener más información sobre el uso del copete en escritos periodísticos en el siguiente: http://www.abc.com.py/articulos/el-lead-y-el-cuerpo-de-la-noticia-1055422.html');
+  t('Utilice este campo para presentar múltiples imágenes o videos relacionados con la noticia');
 
   return $field_instances;
 }

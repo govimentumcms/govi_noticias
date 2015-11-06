@@ -10,30 +10,46 @@
 function govi_noticias_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_categoria'.
-  $field_bases['field_categoria'] = array(
+  // Exported field_base: 'field_archivos_adjuntos'.
+  $field_bases['field_archivos_adjuntos'] = array(
+    'active' => 1,
+    'cardinality' => 10,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_archivos_adjuntos',
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'file',
+    'settings' => array(
+      'display_default' => 0,
+      'display_field' => 0,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'file',
+  );
+
+  // Exported field_base: 'field_copete'.
+  $field_bases['field_copete'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_categoria',
+    'field_name' => 'field_copete',
     'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
+      'format' => array(
+        0 => 'format',
       ),
     ),
     'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'noticias',
-          'parent' => 0,
-        ),
-      ),
-    ),
+    'module' => 'text',
+    'settings' => array(),
     'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
+    'type' => 'text_with_summary',
   );
 
   // Exported field_base: 'field_fecha_de_publicacion'.
@@ -72,6 +88,28 @@ function govi_noticias_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_image',
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 0,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'image',
+  );
+
+  // Exported field_base: 'field_multimedia_noticia'.
+  $field_bases['field_multimedia_noticia'] = array(
+    'active' => 1,
+    'cardinality' => 5,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_multimedia_noticia',
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
