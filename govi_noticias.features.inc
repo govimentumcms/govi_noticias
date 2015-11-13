@@ -32,6 +32,21 @@ function govi_noticias_image_default_styles() {
     ),
   );
 
+  // Exported image style: imagen_otras_noticias.
+  $styles['imagen_otras_noticias'] = array(
+    'label' => 'Imagen otras noticias',
+    'effects' => array(
+      2 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 70,
+          'height' => 70,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: imagen_principal_noticia.
   $styles['imagen_principal_noticia'] = array(
     'label' => 'Imagen principal noticia',
