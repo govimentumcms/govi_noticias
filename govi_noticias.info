@@ -15,6 +15,7 @@ dependencies[] = file
 dependencies[] = filter
 dependencies[] = image
 dependencies[] = libraries
+dependencies[] = link
 dependencies[] = menu
 dependencies[] = options
 dependencies[] = scrollbar
