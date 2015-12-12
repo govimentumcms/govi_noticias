@@ -119,10 +119,20 @@ function govi_noticias_views_default_views() {
   /* Display: block */
   $handler = $view->new_display('block', 'block', 'block_1');
   $handler->display->display_options['block_description'] = 'Últimas noticias principal';
-
-  /* Display: block */
-  $handler = $view->new_display('block', 'block', 'block_2');
-  $handler->display->display_options['block_description'] = 'Últimas noticias principal';
+  $translatables['noticias'] = array(
+    t('Master'),
+    t('Noticias'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Leer Noticia'),
+    t('Type'),
+    t('block'),
+    t('Últimas noticias principal'),
+  );
   $export['noticias'] = $view;
 
   $view = new view();
@@ -228,10 +238,20 @@ function govi_noticias_views_default_views() {
   /* Display: block */
   $handler = $view->new_display('block', 'block', 'block_1');
   $handler->display->display_options['block_description'] = 'Otras noticias';
-
-  /* Display: block */
-  $handler = $view->new_display('block', 'block', 'block_2');
-  $handler->display->display_options['block_description'] = 'Últimas noticias principal';
+  $translatables['otras_noticias'] = array(
+    t('Master'),
+    t('         '),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('<a href="#">Ver más noticias</a>'),
+    t('Type'),
+    t('block'),
+    t('Otras noticias'),
+  );
   $export['otras_noticias'] = $view;
 
   return $export;
