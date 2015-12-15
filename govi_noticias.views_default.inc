@@ -162,7 +162,7 @@ function govi_noticias_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<a href="#">Ver más noticias</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="/?q=noticias">Ver más noticias</a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   /* Field: Content: Multimedia */
   $handler->display->display_options['fields']['field_multimedia_noticia']['id'] = 'field_multimedia_noticia';
@@ -247,7 +247,7 @@ function govi_noticias_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('<a href="#">Ver más noticias</a>'),
+    t('<a href="/?q=noticias">Ver más noticias</a>'),
     t('Type'),
     t('block'),
     t('Otras noticias'),
@@ -278,7 +278,27 @@ function govi_noticias_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'list';
-  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Noticias';
+  $handler->display->display_options['header']['area']['content'] = '<h2 class="noticias">Noticias</h2>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  /* Field: Content: Multimedia */
+  $handler->display->display_options['fields']['field_multimedia_noticia']['id'] = 'field_multimedia_noticia';
+  $handler->display->display_options['fields']['field_multimedia_noticia']['table'] = 'field_data_field_multimedia_noticia';
+  $handler->display->display_options['fields']['field_multimedia_noticia']['field'] = 'field_multimedia_noticia';
+  $handler->display->display_options['fields']['field_multimedia_noticia']['label'] = '';
+  $handler->display->display_options['fields']['field_multimedia_noticia']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_multimedia_noticia']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_multimedia_noticia']['settings'] = array(
+    'image_style' => 'imagen_otras_noticias',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_multimedia_noticia']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_multimedia_noticia']['delta_offset'] = '0';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -286,6 +306,35 @@ function govi_noticias_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Fecha de publicación */
+  $handler->display->display_options['fields']['field_fecha_de_publicacion']['id'] = 'field_fecha_de_publicacion';
+  $handler->display->display_options['fields']['field_fecha_de_publicacion']['table'] = 'field_data_field_fecha_de_publicacion';
+  $handler->display->display_options['fields']['field_fecha_de_publicacion']['field'] = 'field_fecha_de_publicacion';
+  $handler->display->display_options['fields']['field_fecha_de_publicacion']['label'] = '';
+  $handler->display->display_options['fields']['field_fecha_de_publicacion']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_fecha_de_publicacion']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+  );
+  /* Field: Content: Copete */
+  $handler->display->display_options['fields']['field_copete']['id'] = 'field_copete';
+  $handler->display->display_options['fields']['field_copete']['table'] = 'field_data_field_copete';
+  $handler->display->display_options['fields']['field_copete']['field'] = 'field_copete';
+  $handler->display->display_options['fields']['field_copete']['label'] = '';
+  $handler->display->display_options['fields']['field_copete']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_copete']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['field_copete']['settings'] = array(
+    'trim_length' => '200',
+  );
+  $handler->display->display_options['filter_groups']['operator'] = 'OR';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -300,6 +349,7 @@ function govi_noticias_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'noticia' => 'noticia',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
@@ -313,9 +363,10 @@ function govi_noticias_views_default_views() {
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
   $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'word';
+  $handler->display->display_options['filters']['title']['group'] = 1;
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
   $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
   $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
@@ -329,7 +380,6 @@ function govi_noticias_views_default_views() {
   $handler->display->display_options['filters']['field_fecha_de_publicacion_value']['field'] = 'field_fecha_de_publicacion_value';
   $handler->display->display_options['filters']['field_fecha_de_publicacion_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_fecha_de_publicacion_value']['expose']['operator_id'] = 'field_fecha_de_publicacion_value_op';
-  $handler->display->display_options['filters']['field_fecha_de_publicacion_value']['expose']['label'] = 'Fecha de publicación';
   $handler->display->display_options['filters']['field_fecha_de_publicacion_value']['expose']['operator'] = 'field_fecha_de_publicacion_value_op';
   $handler->display->display_options['filters']['field_fecha_de_publicacion_value']['expose']['identifier'] = 'field_fecha_de_publicacion_value';
   $handler->display->display_options['filters']['field_fecha_de_publicacion_value']['expose']['remember_roles'] = array(
@@ -342,7 +392,7 @@ function govi_noticias_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['exposed_block'] = TRUE;
-  $handler->display->display_options['path'] = 'pagina-noticias';
+  $handler->display->display_options['path'] = 'noticias';
   $translatables['pagina_noticias'] = array(
     t('Master'),
     t('pagina noticias'),
@@ -359,9 +409,9 @@ function govi_noticias_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('Noticias'),
+    t('<h2 class="noticias">Noticias</h2>'),
     t('Type'),
-    t('Title'),
-    t('Fecha de publicación'),
     t('Page'),
   );
   $export['pagina_noticias'] = $view;

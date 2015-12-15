@@ -50,7 +50,7 @@ function govi_noticias_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -65,7 +65,7 @@ function govi_noticias_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_table',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -92,7 +92,7 @@ function govi_noticias_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -104,11 +104,11 @@ function govi_noticias_field_default_field_instances() {
     'description' => 'Utilice este campo para implementar el Lead o Copete del texto. Puede tener más información sobre el uso del copete en escritos periodísticos en el siguiente: http://www.abc.com.py/articulos/el-lead-y-el-cuerpo-de-la-noticia-1055422.html',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -134,7 +134,7 @@ function govi_noticias_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -197,7 +197,7 @@ function govi_noticias_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'short',
@@ -208,7 +208,7 @@ function govi_noticias_field_default_field_instances() {
           'show_remaining_days' => 0,
         ),
         'type' => 'date_default',
-        'weight' => 5,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -241,7 +241,7 @@ function govi_noticias_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 6,
+      'weight' => 1,
     ),
   );
 
@@ -252,7 +252,7 @@ function govi_noticias_field_default_field_instances() {
     'description' => 'Utilice este campo para presentar múltiples imágenes o videos relacionados con la noticia',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'field_slideshow',
         'settings' => array(
           'slideshow_caption' => '',
@@ -275,7 +275,7 @@ function govi_noticias_field_default_field_instances() {
           'slideshow_controls_position' => 'after',
           'slideshow_field_collection_image' => '',
           'slideshow_fx' => 'fade',
-          'slideshow_image_style' => '',
+          'slideshow_image_style' => 'large',
           'slideshow_link' => '',
           'slideshow_order' => '',
           'slideshow_pager' => '',
@@ -287,7 +287,7 @@ function govi_noticias_field_default_field_instances() {
           'slideshow_timeout' => 4000,
         ),
         'type' => 'slideshow',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -319,7 +319,7 @@ function govi_noticias_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -335,7 +335,7 @@ function govi_noticias_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -359,7 +359,7 @@ function govi_noticias_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
