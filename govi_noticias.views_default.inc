@@ -272,9 +272,10 @@ function govi_noticias_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'buscar';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Buscar';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
-  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'resetear';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Limpiar';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Ordenar por';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'list';
@@ -397,9 +398,9 @@ function govi_noticias_views_default_views() {
     t('Master'),
     t('pagina noticias'),
     t('more'),
-    t('buscar'),
-    t('resetear'),
-    t('Sort by'),
+    t('Buscar'),
+    t('Limpiar'),
+    t('Ordenar por'),
     t('Asc'),
     t('Desc'),
     t('Items per page'),
