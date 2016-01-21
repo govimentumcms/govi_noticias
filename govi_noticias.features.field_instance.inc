@@ -64,7 +64,7 @@ function govi_noticias_field_default_field_instances() {
         'label' => 'above',
         'module' => 'file',
         'settings' => array(),
-        'type' => 'file_table',
+        'type' => 'file_default',
         'weight' => 5,
       ),
       'teaser' => array(
@@ -79,7 +79,7 @@ function govi_noticias_field_default_field_instances() {
     'label' => 'Archivos adjuntos',
     'required' => 0,
     'settings' => array(
-      'description_field' => 0,
+      'description_field' => 1,
       'file_directory' => 'archivos-adjuntos',
       'file_extensions' => 'pdf doc docx odt odf xls xlsx zip',
       'max_filesize' => '2 MB',
