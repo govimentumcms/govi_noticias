@@ -272,7 +272,7 @@ function govi_noticias_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Buscar';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Filtrar Noticia';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Limpiar';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Ordenar por';
@@ -379,6 +379,7 @@ function govi_noticias_views_default_views() {
   $handler->display->display_options['filters']['field_fecha_de_publicacion_value']['id'] = 'field_fecha_de_publicacion_value';
   $handler->display->display_options['filters']['field_fecha_de_publicacion_value']['table'] = 'field_data_field_fecha_de_publicacion';
   $handler->display->display_options['filters']['field_fecha_de_publicacion_value']['field'] = 'field_fecha_de_publicacion_value';
+  $handler->display->display_options['filters']['field_fecha_de_publicacion_value']['group'] = 2;
   $handler->display->display_options['filters']['field_fecha_de_publicacion_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_fecha_de_publicacion_value']['expose']['operator_id'] = 'field_fecha_de_publicacion_value_op';
   $handler->display->display_options['filters']['field_fecha_de_publicacion_value']['expose']['operator'] = 'field_fecha_de_publicacion_value_op';
@@ -398,7 +399,7 @@ function govi_noticias_views_default_views() {
     t('Master'),
     t('pagina noticias'),
     t('more'),
-    t('Buscar'),
+    t('Filtrar Noticia'),
     t('Limpiar'),
     t('Ordenar por'),
     t('Asc'),
