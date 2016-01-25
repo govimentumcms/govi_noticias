@@ -47,6 +47,7 @@ features[filter][] = filtered_html
 features[filter][] = full_html
 features[filter][] = plain_text
 features[image][] = imagen_noticia_destacada
+features[image][] = imagen_noticias_nodo
 features[image][] = imagen_otras_noticias
 features[image][] = imagen_principal_noticia
 features[menu_custom][] = main-menu
