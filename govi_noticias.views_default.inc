@@ -287,6 +287,14 @@ function govi_noticias_views_default_views() {
   $handler->display->display_options['header']['area']['label'] = 'Noticias';
   $handler->display->display_options['header']['area']['content'] = '<h2 class="noticias">Noticias</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
+  /* No results behavior: Global: Unfiltered text */
+  $handler->display->display_options['empty']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area_text_custom']['content'] = '<div class="messages error">
+<h2 class="element-invisible">Error message</h2>
+No se encontró ningún resultado.</div>';
   /* Field: Content: Multimedia */
   $handler->display->display_options['fields']['field_multimedia_noticia']['id'] = 'field_multimedia_noticia';
   $handler->display->display_options['fields']['field_multimedia_noticia']['table'] = 'field_data_field_multimedia_noticia';
@@ -413,6 +421,9 @@ function govi_noticias_views_default_views() {
     t('last »'),
     t('Noticias'),
     t('<h2 class="noticias">Noticias</h2>'),
+    t('<div class="messages error">
+<h2 class="element-invisible">Error message</h2>
+No se encontró ningún resultado.</div>'),
     t('Type'),
     t('Page'),
   );
