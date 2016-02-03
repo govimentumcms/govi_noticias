@@ -339,11 +339,11 @@ No se encontró ningún resultado.</div>';
   $handler->display->display_options['fields']['field_copete']['settings'] = array(
     'trim_length' => '200',
   );
+  /* Sort criterion: Content: Fecha de publicación (field_fecha_de_publicacion) */
+  $handler->display->display_options['sorts']['field_fecha_de_publicacion_value']['id'] = 'field_fecha_de_publicacion_value';
+  $handler->display->display_options['sorts']['field_fecha_de_publicacion_value']['table'] = 'field_data_field_fecha_de_publicacion';
+  $handler->display->display_options['sorts']['field_fecha_de_publicacion_value']['field'] = 'field_fecha_de_publicacion_value';
   $handler->display->display_options['filter_groups']['operator'] = 'OR';
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    2 => 'OR',
-  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -387,7 +387,7 @@ No se encontró ningún resultado.</div>';
   $handler->display->display_options['filters']['field_fecha_de_publicacion_value']['id'] = 'field_fecha_de_publicacion_value';
   $handler->display->display_options['filters']['field_fecha_de_publicacion_value']['table'] = 'field_data_field_fecha_de_publicacion';
   $handler->display->display_options['filters']['field_fecha_de_publicacion_value']['field'] = 'field_fecha_de_publicacion_value';
-  $handler->display->display_options['filters']['field_fecha_de_publicacion_value']['group'] = 2;
+  $handler->display->display_options['filters']['field_fecha_de_publicacion_value']['group'] = 1;
   $handler->display->display_options['filters']['field_fecha_de_publicacion_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_fecha_de_publicacion_value']['expose']['operator_id'] = 'field_fecha_de_publicacion_value_op';
   $handler->display->display_options['filters']['field_fecha_de_publicacion_value']['expose']['operator'] = 'field_fecha_de_publicacion_value_op';

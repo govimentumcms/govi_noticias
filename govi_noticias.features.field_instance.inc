@@ -232,13 +232,13 @@ function govi_noticias_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
-        'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'M j Y - g:i:sa',
         'input_format_custom' => '',
         'label_position' => 'above',
+        'no_fieldset' => 0,
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-10:+0',
       ),
       'type' => 'date_popup',
       'weight' => 1,
@@ -323,36 +323,36 @@ function govi_noticias_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-noticia-field_tags'.
-  $field_instances['node-noticia-field_tags'] = array(
+  // Exported field_instance: 'node-noticia-field_noticia_tags'.
+  $field_instances['node-noticia-field_noticia_tags'] = array(
     'bundle' => 'noticia',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter a comma-separated list of words to describe your content.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 10,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_tags',
+    'field_name' => 'field_noticia_tags',
     'label' => 'Tags',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 0,
       'module' => 'taxonomy',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
@@ -413,7 +413,6 @@ function govi_noticias_field_default_field_instances() {
   t('Body');
   t('Copete');
   t('Enlace');
-  t('Enter a comma-separated list of words to describe your content.');
   t('Fecha de publicación');
   t('Multimedia');
   t('Tags');
