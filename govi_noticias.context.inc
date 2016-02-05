@@ -40,6 +40,12 @@ function govi_noticias_context_default_contexts() {
           'region' => 'posicion_e_3',
           'weight' => '-10',
         ),
+        'views-noticias_relacionadas-block' => array(
+          'module' => 'views',
+          'delta' => 'noticias_relacionadas-block',
+          'region' => 'posicion_e_3',
+          'weight' => '-9',
+        ),
       ),
     ),
   );

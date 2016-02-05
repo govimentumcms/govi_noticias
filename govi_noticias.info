@@ -1,7 +1,7 @@
 name = Govi Noticias
 description = Implementa característica funcional para gestionar noticias institucionales
 core = 7.x
-package = Features
+package = Govimentum
 version = 7.x-1.0-beta1
 project = govi_noticias
 dependencies[] = context
@@ -55,6 +55,7 @@ features[menu_custom][] = main-menu
 features[node][] = noticia
 features[taxonomy][] = noticias
 features[views_view][] = noticias
+features[views_view][] = noticias_relacionadas
 features[views_view][] = otras_noticias
 features[views_view][] = pagina_noticias
 features_exclude[dependencies][feature_main_slideshow] = feature_main_slideshow
