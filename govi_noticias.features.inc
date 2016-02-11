@@ -11,6 +11,9 @@ function govi_noticias_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
+  if ($module == "field_validation" && $api == "default_field_validation_rules") {
+    return array("version" => "2");
+  }
   if ($module == "path_breadcrumbs" && $api == "path_breadcrumbs") {
     return array("version" => "1");
   }
