@@ -274,7 +274,7 @@ function govi_noticias_views_default_views() {
   $handler->display->display_options['fields']['field_fecha_de_publicacion']['label'] = '';
   $handler->display->display_options['fields']['field_fecha_de_publicacion']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_fecha_de_publicacion']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'short',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
