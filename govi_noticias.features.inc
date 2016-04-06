@@ -54,8 +54,8 @@ function govi_noticias_image_default_styles() {
       1 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 480,
-          'height' => 310,
+          'width' => 310,
+          'height' => 200,
         ),
         'weight' => 1,
       ),

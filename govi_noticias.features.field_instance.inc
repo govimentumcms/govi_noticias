@@ -101,7 +101,8 @@ function govi_noticias_field_default_field_instances() {
     'bundle' => 'noticia',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Utilice este campo para implementar el Lead o Copete del texto. Puede tener más información sobre el uso del copete en escritos periodísticos en el siguiente: http://www.abc.com.py/articulos/el-lead-y-el-cuerpo-de-la-noticia-1055422.html',
+    'description' => 'Utilice este campo para implementar el Lead o Copete del texto. Puede tener más información sobre el uso del copete en escritos periodísticos en el siguiente: http://www.abc.com.py/articulos/el-lead-y-el-cuerpo-de-la-noticia-1055422.html
+<strong>No puede superar los 400 caracteres </strong>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -122,7 +123,7 @@ function govi_noticias_field_default_field_instances() {
     'label' => 'Copete',
     'required' => 1,
     'settings' => array(
-      'display_summary' => 0,
+      'display_summary' => 1,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -130,6 +131,12 @@ function govi_noticias_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'maxlength_js' => 400,
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Contenido limitado a @limit caracteres, faltante: <strong>@remaining</strong>',
+        'maxlength_js_label_summary' => 'Contenido limitado a @limit caracteres, faltante: <strong>@remaining</strong>',
+        'maxlength_js_summary' => 400,
+        'maxlength_js_truncate_html' => 0,
         'rows' => 5,
         'summary_rows' => 5,
       ),
@@ -416,7 +423,8 @@ function govi_noticias_field_default_field_instances() {
   t('Fecha de publicación');
   t('Multimedia');
   t('Tags');
-  t('Utilice este campo para implementar el Lead o Copete del texto. Puede tener más información sobre el uso del copete en escritos periodísticos en el siguiente: http://www.abc.com.py/articulos/el-lead-y-el-cuerpo-de-la-noticia-1055422.html');
+  t('Utilice este campo para implementar el Lead o Copete del texto. Puede tener más información sobre el uso del copete en escritos periodísticos en el siguiente: http://www.abc.com.py/articulos/el-lead-y-el-cuerpo-de-la-noticia-1055422.html
+<strong>No puede superar los 400 caracteres </strong>');
   t('Utilice este campo para presentar múltiples imágenes o videos relacionados con la noticia');
 
   return $field_instances;
